@@ -1,0 +1,20 @@
+.container {
+
+    @for $i from 20 to 100 {
+        &.w#{$i} {
+            width: #{$i} * 1%;
+        }
+    }
+
+    margin: auto;
+}
+
+.row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

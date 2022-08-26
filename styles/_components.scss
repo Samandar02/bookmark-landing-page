@@ -1,0 +1,61 @@
+@use './abstracts' as abs;
+
+.btn {
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 1rem 1.2rem;
+    display: inline-block;
+    border-radius: abs.$border-radius;
+    font-weight: 500;
+
+    &.btn-fluid {
+        width: 100%;
+    }
+
+    &.btn-accent {
+        color: abs.$secondary-color;
+        background-color: abs.$accent-color;
+    }
+
+    &.btn-primary {
+        color: abs.$secondary-color;
+        background-color: abs.$primary-color;
+    }
+
+    &.btn-space {
+        border: transparent;
+        color: abs.$text-color-d;
+        background-color: abs.$secondary-color;
+    }
+}
+
+.content {
+    .head {
+        margin: 1.2rem 0;
+        color: abs.$text-color;
+    }
+
+    .headline {
+        color: abs.$text-color-l;
+    }
+
+    &.content-center {
+        text-align: center;
+    }
+
+    &.content-left {
+        text-align: left;
+    }
+
+    .content-footer {
+        text-align: left;
+    }
+}
+
+.card {
+    width: 260px;
+
+    .card-image {
+        text-align: center;
+    }
+}
