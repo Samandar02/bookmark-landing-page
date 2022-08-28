@@ -1,20 +1,37 @@
+@use './abstracts' as abs;
 .container {
-
-    @for $i from 20 to 100 {
-        &.w#{$i} {
-            width: #{$i} * 1%;
+    @for $i from 4 to 10 {
+        &.w#{$i*10} {
+            width: #{$i}+0%;
         }
     }
-
     margin: auto;
 }
 
+.row-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include abs.media(425px){
+        flex-direction: column;
+    }
+}
 .row-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    @include abs.media(425px){
+        grid-template-columns: 1fr;
+    }
 }
 
 .row-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @include abs.media(768px){
+        grid-template-columns: 1fr 1fr;
+    }
+    @include abs.media(425px){
+        grid-template-columns: 1fr;
+    }
 }

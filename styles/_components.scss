@@ -7,9 +7,12 @@
     display: inline-block;
     border-radius: abs.$border-radius;
     font-weight: 500;
+    border: 2px solid transparent;
+    transition: all .3s ease-in-out;
+    margin: 2px;
 
     &.btn-fluid {
-        width: 100%;
+        width: 90%;
     }
 
     &.btn-accent {
@@ -23,20 +26,38 @@
     }
 
     &.btn-space {
-        border: transparent;
+        border: 2px solid transparent;
         color: abs.$text-color-d;
         background-color: abs.$secondary-color;
+    }
+
+    &.btn-none {
+        &:hover {
+            background-color: transparent;
+            border: 2px solid transparent;
+            color: abs.$accent-color;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+        border: 2px solid;
+        color: abs.$accent-color;
     }
 }
 
 .content {
     .head {
-        margin: 1.2rem 0;
+        margin: 4.6rem 0;
         color: abs.$text-color;
     }
 
     .headline {
         color: abs.$text-color-l;
+    }
+
+    .footer {
+        margin: 3.2rem 0;
     }
 
     &.content-center {
@@ -54,8 +75,78 @@
 
 .card {
     width: 260px;
+    border-radius: abs.$border-radius;
+    box-shadow: 4px 4px 12px rgba(abs.$text-color-l, .4);
 
     .card-image {
         text-align: center;
+
+        img {
+            width: 12rem;
+            margin: 1rem;
+        }
     }
+}
+
+.title {
+    width: 100%;
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
+.collabsible {
+    padding: 2.4rem 0;
+    user-select: none;
+    border-bottom: 1px solid abs.$text-color-l;
+
+    .collabsible-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .collabsible-body {
+        max-height: 0;
+        overflow: hidden;
+        //transition: all .5s ease-in;
+    }
+    .chevron {
+        transition: all .5s ease-in;
+    }
+
+}
+
+.collapse {
+    
+    .chevron {
+        transform: rotate(90deg);
+    }
+    @include abs.media(768px){
+        .feel{
+            position: fixed;
+            top: 50px;
+            right: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(abs.$text-color, .8);
+            border-radius: 8px;
+        }
+    }
+    .collabsible-body {
+        max-height: 100vh;
+        transition: all .5s ease-in;
+    }
+
+}
+
+.bg-primary {
+    background-color: abs.$primary-color;
+}
+
+.bg-primary-dark {
+    background-color: darken(abs.$primary-color, 19px);
+
 }

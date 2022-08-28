@@ -7,3 +7,9 @@ $text-color-l:hsl(232deg 4% 62%);
 
 
 $border-radius:6px;
+
+@mixin media($endpoint) {
+    @media screen and (max-width:$endpoint) {
+        @content;
+    }
+}

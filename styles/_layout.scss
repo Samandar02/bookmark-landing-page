@@ -1,0 +1,163 @@
+@use './abstracts' as abs;
+
+nav {
+    margin-top: 5.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .hamburger{
+        display: none;
+        width: 2.4rem;
+        height: 2.4rem;
+        position: fixed;
+        top: 3rem;
+        right: 4rem;
+    }
+    @include abs.media(768px){
+        .hamburger{
+            display: block;
+        }
+    }
+    .nav {
+        .nav-item {
+            .item {
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
+        }
+    }
+}
+
+main {
+    margin-top: 12rem;
+
+    .container {
+        &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: 15vh;
+            right: 0;
+            width: 42.6rem;
+            height: 32rem;
+            background-color: abs.$primary-color;
+            z-index: -1;
+            border-top-left-radius: 39.8%;
+            border-bottom-left-radius: 39.8%;
+        }
+    }
+}
+
+.tabbing {
+    user-select: none;
+    margin: 3.2rem;
+    @include abs.media(768px){
+      margin: 0;
+    }
+    .tabbing-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include abs.media(425px){
+            flex-direction: column;
+        }
+        ul {
+            border-bottom: 1px solid abs.$text-color-l;
+
+            .active {
+                padding-bottom: 1.1rem;
+                border-bottom: 3px solid abs.$accent-color;
+            }
+        }
+    }
+
+    .tabbing-content {
+        user-select: none;
+
+        .content {
+            margin-left: 12rem;
+        }
+
+        margin: 3.2rem;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: -8vh;
+            left: -18%;
+            width: 42.6rem;
+            height: 32rem;
+            background-color: abs.$primary-color;
+            z-index: -1;
+            border-top-right-radius: 39.8%;
+            border-bottom-right-radius: 39.8%;
+        }
+
+        .tab-item {
+            max-width: 100vh;
+            overflow: hidden;
+            transition: max-width .3s ease-in;
+
+            &.hidden {
+                max-width: 0;
+                transition: max-width .2s ease-in;
+            }
+        }
+    }
+}
+
+.mt80 {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+
+    .card {
+        &:first-child {
+            transform: translateY(-36px);
+        }
+
+        &:last-child {
+            transform: translateY(36px);
+        }
+    }
+}
+
+.ptb {
+    padding: 3rem 0;
+}
+
+.callout {
+    color: white;
+    text-align: center;
+}
+
+.mtop {
+    margin-top: 3rem;
+}
+
+.ml60 {
+    margin-left: 3rem;
+}
+
+.flspb {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    input {
+        border-radius: abs.$border-radius;
+        outline: none;
+        border: none;
+        padding: 1.2rem;
+    }
+
+}
+.flspa {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+}

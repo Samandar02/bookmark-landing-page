@@ -1,30 +1,51 @@
 @use './abstracts' as abs;
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-html{
+
+html {
     font-size: 62.5%;
     font-family: 'Rubik', sans-serif;
 }
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-a{
+img{
+    width: 100%;
+}
+a {
     color: abs.$text-color-d;
     text-decoration: none;
 }
-p{
+
+a.ancor-dark {
+    color: abs.$secondary-color;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
     font-size: 1.6rem;
 }
-.b{
+
+p {
+    font-size: 1.6rem;
+}
+
+.b {
     border: 1px solid;
 }
-h1{
+
+h1 {
     font-size: 3.8rem;
 }
-h2{
+
+h2 {
     font-size: 2.8rem;
 }
-h3{
+
+h3 {
     font-size: 1.8rem;
 }

@@ -10,9 +10,24 @@ html {
   padding: 0;
 }
 
+img {
+  width: 100%;
+}
+
 a {
   color: rgb(98, 98, 98);
   text-decoration: none;
+}
+
+a.ancor-dark {
+  color: hsl(231deg, 44%, 94%);
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
 }
 
 p {
@@ -42,9 +57,12 @@ h3 {
   display: inline-block;
   border-radius: 6px;
   font-weight: 500;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  margin: 2px;
 }
 .btn.btn-fluid {
-  width: 100%;
+  width: 90%;
 }
 .btn.btn-accent {
   color: hsl(231deg, 44%, 94%);
@@ -55,17 +73,30 @@ h3 {
   background-color: hsl(231deg, 60%, 57%);
 }
 .btn.btn-space {
-  border: transparent;
+  border: 2px solid transparent;
   color: rgb(98, 98, 98);
   background-color: hsl(231deg, 44%, 94%);
 }
+.btn.btn-none:hover {
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: hsl(0deg, 95%, 66%);
+}
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid;
+  color: hsl(0deg, 95%, 66%);
+}
 
 .content .head {
-  margin: 1.2rem 0;
+  margin: 4.6rem 0;
   color: hsl(231deg, 30%, 17%);
 }
 .content .headline {
   color: hsl(232deg, 4%, 62%);
+}
+.content .footer {
+  margin: 3.2rem 0;
 }
 .content.content-center {
   text-align: center;
@@ -79,27 +110,279 @@ h3 {
 
 .card {
   width: 260px;
+  border-radius: 6px;
+  box-shadow: 4px 4px 12px rgba(154, 155, 162, 0.4);
 }
 .card .card-image {
   text-align: center;
+}
+.card .card-image img {
+  width: 12rem;
+  margin: 1rem;
+}
+
+.title {
+  width: 100%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.collabsible {
+  padding: 2.4rem 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-bottom: 1px solid hsl(232deg, 4%, 62%);
+}
+.collabsible .collabsible-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.collabsible .collabsible-body {
+  max-height: 0;
+  overflow: hidden;
+}
+.collabsible .chevron {
+  transition: all 0.5s ease-in;
+}
+
+.collapse .chevron {
+  transform: rotate(90deg);
+}
+@media screen and (max-width: 768px) {
+  .collapse .feel {
+    position: fixed;
+    top: 50px;
+    right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(30, 34, 56, 0.8);
+    border-radius: 8px;
+  }
+}
+.collapse .collabsible-body {
+  max-height: 100vh;
+  transition: all 0.5s ease-in;
+}
+
+.bg-primary {
+  background-color: hsl(231deg, 60%, 57%);
+}
+
+.bg-primary-dark {
+  background-color: #27389b;
 }
 
 .container {
   margin: auto;
 }
-.container.w80 {
-  width: 80%;
+.container.w40 {
+  width: 40%;
+}
+.container.w50 {
+  width: 50%;
 }
 .container.w60 {
   width: 60%;
+}
+.container.w70 {
+  width: 70%;
+}
+.container.w80 {
+  width: 80%;
+}
+.container.w90 {
+  width: 90%;
+}
+
+.row-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 425px) {
+  .row-1 {
+    flex-direction: column;
+  }
 }
 
 .row-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+@media screen and (max-width: 425px) {
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .row-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+  .row-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 425px) {
+  .row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+nav {
+  margin-top: 5.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .hamburger {
+  display: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: fixed;
+  top: 3rem;
+  right: 4rem;
+}
+@media screen and (max-width: 768px) {
+  nav .hamburger {
+    display: block;
+  }
+}
+nav .nav .nav-item .item {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+main {
+  margin-top: 12rem;
+}
+main .container::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 15vh;
+  right: 0;
+  width: 42.6rem;
+  height: 32rem;
+  background-color: hsl(231deg, 60%, 57%);
+  z-index: -1;
+  border-top-left-radius: 39.8%;
+  border-bottom-left-radius: 39.8%;
+}
+
+.tabbing {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 3.2rem;
+}
+@media screen and (max-width: 768px) {
+  .tabbing {
+    margin: 0;
+  }
+}
+.tabbing .tabbing-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 425px) {
+  .tabbing .tabbing-header {
+    flex-direction: column;
+  }
+}
+.tabbing .tabbing-header ul {
+  border-bottom: 1px solid hsl(232deg, 4%, 62%);
+}
+.tabbing .tabbing-header ul .active {
+  padding-bottom: 1.1rem;
+  border-bottom: 3px solid hsl(0deg, 95%, 66%);
+}
+.tabbing .tabbing-content {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 3.2rem;
+  position: relative;
+}
+.tabbing .tabbing-content .content {
+  margin-left: 12rem;
+}
+.tabbing .tabbing-content::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: -8vh;
+  left: -18%;
+  width: 42.6rem;
+  height: 32rem;
+  background-color: hsl(231deg, 60%, 57%);
+  z-index: -1;
+  border-top-right-radius: 39.8%;
+  border-bottom-right-radius: 39.8%;
+}
+.tabbing .tabbing-content .tab-item {
+  max-width: 100vh;
+  overflow: hidden;
+  transition: max-width 0.3s ease-in;
+}
+.tabbing .tabbing-content .tab-item.hidden {
+  max-width: 0;
+  transition: max-width 0.2s ease-in;
+}
+
+.mt80 {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+.mt80 .card:first-child {
+  transform: translateY(-36px);
+}
+.mt80 .card:last-child {
+  transform: translateY(36px);
+}
+
+.ptb {
+  padding: 3rem 0;
+}
+
+.callout {
+  color: white;
+  text-align: center;
+}
+
+.mtop {
+  margin-top: 3rem;
+}
+
+.ml60 {
+  margin-left: 3rem;
+}
+
+.flspb {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.flspb input {
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 1.2rem;
+}
+
+.flspa {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }/*# sourceMappingURL=main.css.map */
